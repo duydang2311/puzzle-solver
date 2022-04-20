@@ -6,6 +6,7 @@ using Puzzle.Directions;
 
 public class DFSSolver : Solver
 {
+	public uint Depth { get; set; } = 1;
 	public DFSSolver(State goal) : base(goal) { }
 	public override void Solve(State state)
 	{
@@ -31,7 +32,11 @@ public class DFSSolver : Solver
 					state = state.Parent!;
 					Console.WriteLine();
 				}
-				break;
+				return;
+			}
+			if (state.Depth == Depth)
+			{
+				continue;
 			}
 			foreach (var d in directions)
 			{
@@ -46,6 +51,7 @@ public class DFSSolver : Solver
 				visited.Add(child.Board);
 			}
 		}
+		Console.WriteLine($"Unable to find goal state with max depth set to {Depth}.");
 	}
 }
 
