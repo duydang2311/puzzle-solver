@@ -1,24 +1,24 @@
-namespace Puzzle.Solvers.BFS;
+namespace Puzzle.Solvers.DFS;
 
 using Puzzle.States;
 using Puzzle.Boards;
 using Puzzle.Directions;
 
-public class BFSSolver : Solver
+public class DFSSolver : Solver
 {
-	public BFSSolver(State goal) : base(goal) { }
+	public DFSSolver(State goal) : base(goal) { }
 	public override void Solve(State state)
 	{
 		var visited = new HashSet<Board>();
-		var queue = new Queue<State>();
+		var stack = new Stack<State>();
 		var directions = Enum.GetValues(typeof(Direction));
 		State? child;
 
-		queue.Enqueue(state);
+		stack.Push(state);
 		visited.Add(state.Board);
-		while (queue.Count > 0)
+		while (stack.Count > 0)
 		{
-			state = queue.Dequeue();
+			state = stack.Pop();
 			if (state.Board.Equals(Goal.Board))
 			{
 				Console.Write("Solution: ");
@@ -42,7 +42,7 @@ public class BFSSolver : Solver
 					continue;
 				}
 				child.Parent = state;
-				queue.Enqueue(child);
+				stack.Push(child);
 				visited.Add(child.Board);
 			}
 		}
