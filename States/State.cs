@@ -32,4 +32,17 @@ public partial class State : IEquatable<State>
 	{
 		return HashCode.Combine(Board);
 	}
+	public void PrintTrace()
+	{
+		var state = this;
+		while (state is not null)
+		{
+			foreach (var i in state.Board.Matrix)
+			{
+				Console.Write(i + ' '.ToString());
+			}
+			Console.WriteLine($" (Depth {state.Depth})");
+			state = state.Parent;
+		}
+	}
 }

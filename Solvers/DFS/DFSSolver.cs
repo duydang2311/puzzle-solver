@@ -22,16 +22,8 @@ public class DFSSolver : Solver
 			state = stack.Pop();
 			if (state.Board.Equals(Goal.Board))
 			{
-				Console.Write("Solution: ");
-				while (state is not null)
-				{
-					foreach (var i in state.Board.Matrix)
-					{
-						Console.Write(i + ' '.ToString());
-					}
-					state = state.Parent!;
-					Console.WriteLine();
-				}
+				Console.WriteLine("Goal found!");
+				state.PrintTrace();
 				return;
 			}
 			if (state.Depth == Depth)

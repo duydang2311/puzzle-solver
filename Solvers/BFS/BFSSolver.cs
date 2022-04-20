@@ -21,16 +21,8 @@ public class BFSSolver : Solver
 			state = queue.Dequeue();
 			if (state.Board.Equals(Goal.Board))
 			{
-				Console.Write("Solution: ");
-				while (state is not null)
-				{
-					foreach (var i in state.Board.Matrix)
-					{
-						Console.Write(i + ' '.ToString());
-					}
-					state = state.Parent!;
-					Console.WriteLine();
-				}
+				Console.WriteLine("Goal found!");
+				state.PrintTrace();
 				break;
 			}
 			foreach (var d in directions)
