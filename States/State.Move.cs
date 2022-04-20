@@ -9,6 +9,6 @@ public partial class State : IEquatable<State>
 		var board = Board.Move(direction);
 		return board is null
 			? null
-			: new State(board);
+			: new State(board, this);
 	}
 }

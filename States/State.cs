@@ -6,10 +6,17 @@ public partial class State : IEquatable<State>
 {
 	public Board Board { get; }
 	public State? Parent { get; set; }
+	public uint Depth { get; }
 
-	public State(Board board)
+	public State(Board board, State? parent = null)
 	{
 		Board = board;
+		Parent = parent;
+		Depth = 1;
+		if (Parent is not null)
+		{
+			Depth = Parent.Depth + 1;
+		}
 	}
 	public override bool Equals(object? obj)
 	{
