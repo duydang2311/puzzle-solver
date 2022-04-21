@@ -86,7 +86,7 @@ public class IDSolver : Solver
 			Console.WriteLine("Unable to find goal state.");
 			return;
 		}
-		Console.WriteLine("Goal found!");
+		Console.WriteLine($"Goal state found! {visited.Count} states visited.");
 		goal.PrintTrace();
 	}
 }

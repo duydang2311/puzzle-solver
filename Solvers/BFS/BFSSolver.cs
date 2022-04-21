@@ -21,7 +21,7 @@ public class BFSSolver : Solver
 			state = queue.Dequeue();
 			if (state.Board.Equals(Goal.Board))
 			{
-				Console.WriteLine("Goal found!");
+				Console.WriteLine($"Goal state found! {visited.Count} states visited.");
 				state.PrintTrace();
 				break;
 			}

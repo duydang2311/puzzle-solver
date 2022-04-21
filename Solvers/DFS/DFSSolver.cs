@@ -22,7 +22,7 @@ public class DFSSolver : Solver
 			state = stack.Pop();
 			if (state.Board.Equals(Goal.Board))
 			{
-				Console.WriteLine("Goal found!");
+				Console.WriteLine($"Goal state found! {visited.Count} states visited.");
 				state.PrintTrace();
 				return;
 			}
