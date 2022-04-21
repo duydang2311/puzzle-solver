@@ -6,7 +6,6 @@ using Puzzle.Directions;
 
 public class UCSSolver : Solver
 {
-	public uint Depth { get; set; } = 1;
 	public UCSSolver(State goal) : base(goal) { }
 	public override void Solve(State state)
 	{

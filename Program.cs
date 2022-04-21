@@ -69,8 +69,7 @@ new UCSSolver(
 			{6, 4, 5}
 		})
 	)
-)
-{ Depth = 5 }.Solve(
+).Solve(
 	new State(
 		new Board(new byte[3, 3] {
 			{1, 2, 3},
