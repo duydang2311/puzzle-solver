@@ -43,7 +43,7 @@ public class IDSolver : Solver
 	private State? BFSHelper(Queue<State> queue, HashSet<Board> visited)
 	{
 		State state;
-		State? child = null;
+		State? child;
 		var directions = Enum.GetValues(typeof(Direction));
 		while (queue.Count > 0)
 		{

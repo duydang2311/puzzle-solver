@@ -4,58 +4,58 @@ using Puzzle.Solvers.BFS;
 using Puzzle.Solvers.DFS;
 using Puzzle.Solvers.ID;
 
-new BFSSolver(
-	new State(
-		new Board(new byte[3, 3] {
-			{3, 4, 5},
-			{2, 0, 6},
-			{1, 8, 7}
-		})
-	)
-).Solve(
-	new State(
-		new Board(new byte[3, 3] {
-			{3, 4, 5},
-			{2, 6, 7},
-			{0, 1, 8}
-		})
-	)
-);
+// new BFSSolver(
+// 	new State(
+// 		new Board(new byte[3, 3] {
+// 			{1, 2, 3},
+// 			{0, 8, 7},
+// 			{6, 4, 5}
+// 		})
+// 	)
+// ).Solve(
+// 	new State(
+// 		new Board(new byte[3, 3] {
+// 			{1, 2, 3},
+// 			{7, 4, 0},
+// 			{8, 5, 6}
+// 		})
+// 	)
+// );
 
-new DFSSolver(
-	new State(
-		new Board(new byte[3, 3] {
-			{3, 4, 5},
-			{2, 0, 6},
-			{1, 8, 7}
-		})
-	)
-)
-{ Depth = 7 }.Solve(
-	new State(
-		new Board(new byte[3, 3] {
-			{3, 4, 0},
-			{2, 6, 5},
-			{1, 8, 7}
-		})
-	)
-);
+// new DFSSolver(
+// 	new State(
+// 		new Board(new byte[3, 3] {
+// 			{1, 2, 3},
+// 			{0, 8, 7},
+// 			{6, 4, 5}
+// 		})
+// 	)
+// )
+// { Depth = 11 }.Solve(
+// 	new State(
+// 		new Board(new byte[3, 3] {
+// 			{1, 2, 3},
+// 			{7, 4, 0},
+// 			{8, 5, 6}
+// 		})
+// 	)
+// );
 
 new IDSolver(
 	new State(
 		new Board(new byte[3, 3] {
-			{3, 4, 5},
-			{2, 0, 6},
-			{1, 8, 7}
+			{1, 2, 3},
+			{0, 8, 7},
+			{6, 4, 5}
 		})
 	)
 )
-{ Depth = 7 }.Solve(
+{ Depth = 5 }.Solve(
 	new State(
 		new Board(new byte[3, 3] {
-			{3, 4, 0},
-			{2, 6, 5},
-			{1, 8, 7}
+			{1, 2, 3},
+			{7, 4, 0},
+			{8, 5, 6}
 		})
 	)
 );
